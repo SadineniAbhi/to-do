@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
-import random
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -51,19 +50,6 @@ def delete(todo_id):
 @app.route("/health")
 def health():
     return jsonify({"status": "ok"}), 200
-
-
-@app.route("/joke")
-def joke():
-    """Return a random joke as JSON."""
-    jokes = [
-        "Why do programmers prefer dark mode? Because light attracts bugs!",
-        "There are only 10 kinds of people in this world: those who know binary and those who don’t.",
-        "I would tell you a UDP joke, but you might not get it.",
-        "A SQL query walks into a bar, walks up to two tables and asks: 'Can I join you?'",
-        "To understand recursion, you must first understand recursion.",
-    ]
-    return jsonify({"joke": random.choice(jokes)})
 
 if __name__ == "__main__":
     db.create_all()
