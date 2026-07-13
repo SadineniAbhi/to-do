@@ -53,7 +53,7 @@ def health():
     return jsonify({"status": "ok"}), 200
 
 
-@app.route("/joke")
+#@app.route("/joke")
 @app.route("/datetime")
 @app.route("/datetime", methods=["GET"])
 def get_datetime():
