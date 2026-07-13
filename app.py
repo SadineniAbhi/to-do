@@ -57,7 +57,7 @@ def health():
 @app.route("/datetime")
 def get_datetime():
     from datetime import datetime
-    return jsonify(datetime=datetime.now().isoformat())
+    return jsonify({"datetime": datetime.now().isoformat()})
 
 def joke():
     """Return a random joke as JSON."""
